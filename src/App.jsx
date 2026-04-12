@@ -2,15 +2,14 @@ import { useState } from 'react'
 import {  Cadre } from './components/Global/Cadre';
 import { ActualityCadres } from './components/Actualities/Actualities';
 
-/** 
- *imports for Cadres demo(comment this line on test)
- * import wale  from './assets/wale.png'
+
+import wale  from './assets/wale.png'
 import bird  from './assets/bird.png'
 import apple from './assets/apple.png'
 import Coffee from './assets/coffee.png'
 import test from './assets/test.mp4';
- * 
- */
+
+
 
 function App() {
   return (
@@ -86,8 +85,8 @@ function App() {
           {/**demo ends*/}
 
           {/* demo actuality page(not completed))*/}
-            {/* <ActualityCadres Artist_type={null}/> */}
-          {/*demo ends*/}
+            <ActualityCadres Artist_type={null}/>
+          {/*demo ends */}
 
 
     </>
