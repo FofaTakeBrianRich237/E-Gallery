@@ -16,12 +16,14 @@ import test from './assets/test.mp4';
 
 function App() {
   return (
-   <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/gallery" element={<Gallery />} />
-    </Routes>
+   
     <> 
     
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/actuality" element={<ActualityCadres/>}/>
+    </Routes>
   
          {/**demo Cadres starts*/}
           {/* <div className={`flex border-2 w-full h-[300px] gap-[25px] bg-black`}>
