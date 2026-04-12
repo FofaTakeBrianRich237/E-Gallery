@@ -1,7 +1,9 @@
 import Navbar from '../Global_Component/Navbar.jsx';
+import Buttons from '../Global_Component/Buttons.jsx';
 import { useState, useRef, useEffect } from "react";
 import introVideo from "../../assets/intro.mp4" ;
 import background from "../../assets/HOME.jpg" ;
+import { ArrowDownRight } from 'lucide-react';
 
 function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
@@ -43,10 +45,15 @@ function Home() {
                     ${videoEnded ? "opacity-100" : "opacity-0"}`}
         style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}
       >
-        <Navbar Home={true} />
-        
+        <Navbar Home={true} isConnected={false} />
+        <div className="w-full h-full flex flex-col justify-center items-center">
+            <div>
+                <h1 className="font-[Afrik] text-[48px] text-white mb-4">Welcome to KZB E-Gallery</h1>
+                <p className="font-[Afrik] text-[18px] text-white mb-8">Discover the beauty of art in the digital world</p>
+            </div>
+            <Buttons name={"Discover"} icon={ArrowDownRight} className=" px-[20px] py-[20px] text-[16px]" />
+        </div>
       </div>
-
     </div>
   );
 }
