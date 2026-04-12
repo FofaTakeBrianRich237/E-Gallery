@@ -1,3 +1,6 @@
+import Home from './components/Home/Home.jsx';
+import Gallery from './components/Gallery/Gallery.jsx';
+import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react'
 import {  Cadre } from './components/Global/Cadre';
 import { ActualityCadres } from './components/Actualities/Actualities';
@@ -13,8 +16,14 @@ import test from './assets/test.mp4';
 
 function App() {
   return (
-    <>
-     {/**demo Cadres starts*/}
+   <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/gallery" element={<Gallery />} />
+    </Routes>
+    <> 
+    
+  
+         {/**demo Cadres starts*/}
           {/* <div className={`flex border-2 w-full h-[300px] gap-[25px] bg-black`}>
 
             <Cadre 
