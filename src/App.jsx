@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import Home from './components/Home/Home.jsx';
+import Gallery from './components/Gallery/Gallery.jsx';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <p className='bg-gray-600'>KSB E-Gallery</p>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/gallery" element={<Gallery />} />
+    </Routes>
   );
 }
 

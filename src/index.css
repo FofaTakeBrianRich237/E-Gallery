@@ -1,1 +1,20 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Afrik";
+  src: url("./assets/Font/AfrikaSafariRebuildSt-2lzw.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avigea";
+  src: url("./assets/Font/Avigea-Regular.ttf") format("truetype");
+}
