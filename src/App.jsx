@@ -1,6 +1,7 @@
 import Home from './components/Home/Home.jsx';
 import Gallery from './components/Gallery/Gallery.jsx';
 import { Routes, Route } from 'react-router-dom';
+import { ActualityCadres } from './components/Actualities/Actualities';
 import { useState } from 'react'
 import {  Cadre } from './components/Global/Cadre';
 import { Actualities, ActualityCadres } from './components/Actualities/Actualities';
@@ -18,9 +19,6 @@ import { Artist } from './components/Acounts/Artist/Artist.jsx';
 
 function App() {
   return (
-   
-    <> 
-    
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/gallery" element={<Gallery />} />

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 function Navbar({Home, isConnected}) {
     return (
+        <div style={{position: "fixed", top: 0, left: 0, width: "100%", zIndex: 100}}>
+            <nav className={` flex justify-between items-center h-[105px] pr-[50px] ${!Home ? "bg-[#EEF0F0]" : ""}`}>
         <nav className={`flex justify-between items-center  h-[105px] pr-[50px] ${!Home ? "bg-[#EEF0F0] rounded-b-md" : ""}`}>
             <div className="flex items-center">
                 <Link to="/" className="bg-transparent border-none"><img className="h-[105px]" src={logo} alt="KZB E-Gallery" /></Link>
@@ -15,7 +17,7 @@ function Navbar({Home, isConnected}) {
                 )}
                 <Link to="/gallery" className="font-[Afrik] text-[18px] text-[#272421] no-underline bg-transparent border-none mx-10 hover:text-[#B07618] hover:underline">Gallery</Link>
                 <Link to="/actuality" className="font-[Afrik] text-[18px] text-[#272421] no-underline bg-transparent border-none mx-10 hover:text-[#B07618] hover:underline">Actuality</Link>
-                {isConnected ? (
+                {!isConnected ? (
                 <Link to="/connect" className="font-[Afrik] text-[18px] text-[#272421] no-underline bg-transparent border-none mx-10 hover:text-[#B07618] hover:underline">Connect</Link>
                 ) : (
                 <Link to="/account" className="rounded-full bg-[#EEF0F0] p-[10px] hover:bg-[#B07618] hover:text-white border-none">
@@ -24,6 +26,7 @@ function Navbar({Home, isConnected}) {
                 )}
             </div>
         </nav>
+        </div>
     );
 }
 
