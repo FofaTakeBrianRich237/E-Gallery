@@ -3,7 +3,7 @@ import Gallery from './components/Gallery/Gallery.jsx';
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react'
 import {  Cadre } from './components/Global/Cadre';
-import { ActualityCadres } from './components/Actualities/Actualities';
+import { Actualities, ActualityCadres } from './components/Actualities/Actualities';
 
 
 import wale  from './assets/wale.png'
@@ -11,6 +11,8 @@ import bird  from './assets/bird.png'
 import apple from './assets/apple.png'
 import Coffee from './assets/coffee.png'
 import test from './assets/test.mp4';
+import { AccountCadres, LowerSection, Options, SectionCadres, User } from './components/Acounts/User/User.jsx';
+import { Artist } from './components/Acounts/Artist/Artist.jsx';
 
 
 
@@ -22,7 +24,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route path="/actuality" element={<ActualityCadres/>}/>
+      {/* <Route path="/actuality" element={<Actualities/>}/> */}
+      <Route path="/actuality" element={<Artist/>}/>
+      {/* <Route path="/actuality" element={<User/>}/> */}
     </Routes>
   
          {/**demo Cadres starts*/}
@@ -96,7 +100,7 @@ function App() {
           {/**demo ends*/}
 
           {/* demo actuality page(not completed))*/}
-            <ActualityCadres Artist_type={null}/>
+            {/* <ActualityCadres Artist_type={null}/> */}
           {/*demo ends */}
 
 
