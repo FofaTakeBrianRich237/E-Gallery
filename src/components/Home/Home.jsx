@@ -4,11 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import introVideo from "../../assets/intro.mp4" ;
 import background from "../../assets/HOME.jpg" ;
 import { ArrowDownRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
   const videoRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (videoRef.current) {
@@ -47,11 +49,13 @@ function Home() {
       >
         <Navbar Home={true} isConnected={false} />
         <div className="w-full h-full flex flex-col justify-center items-center">
-            <div>
-                <h1 className="font-[Afrik] text-[48px] text-white mb-4">Welcome to KZB E-Gallery</h1>
-                <p className="font-[Afrik] text-[18px] text-white mb-8">Discover the beauty of art in the digital world</p>
+            <div className="text-center mb-8 absolute top-[20%] left-[5%] w-[650px]" style={{textShadow : "#393533c4 3px 3px 5px"}}>
+                <h1 className="font-[Afrik] text-[38px] mb-4 text-justify">Welcome to KZB E-<span style={{color : "white", textShadow : "#ffffffad 3px 3px 5px"}}>Gallery</span></h1>
+                <p className="font-[Afrik] text-[18px] mb-8 text-justify">
+                  Entre héritage sacré et audac<span style={{color : "white", textShadow : "#ffffffad 3px 3px 5px"}}>e contemporaine, KZB</span> Galerie dévoile l’âme de l’art <span style={{color : "white"}}>africain. Explorez une </span>collection unique où la force d<span style={{color : "white", textShadow : "#ffffffad 3px 3px 5px"}}>es traditions rencontre</span> l’énergie brute de la création m<span style={{color : "white", textShadow : "#ffffffad 3px 3px 5px"}}>oderne.</span>
+                </p>
             </div>
-            <Buttons name={"Discover"} icon={ArrowDownRight} className=" px-[20px] py-[20px] text-[16px]" />
+            <Buttons func={() => navigate('/gallery')} name={"Discover"} icon={ArrowDownRight} className="absolute bottom-[50px] right-[50px] p-[20px] text-[20px]" />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Buttons({ name, icon: Icon, className = "" }) {
+function Buttons({ name, icon: Icon, className = "", func }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -15,6 +15,7 @@ function Buttons({ name, icon: Icon, className = "" }) {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={func}
       className={`flex items-center gap-2 cursor-pointer ${className}`}
     >
       <span>{name}</span>
