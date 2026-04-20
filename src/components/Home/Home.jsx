@@ -7,7 +7,9 @@ import { ArrowDownRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
-  const [videoEnded, setVideoEnded] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(
+    () => sessionStorage.getItem("introPlayed") === "true"
+  );
   const [transitioning, setTransitioning] = useState(false);
   const videoRef = useRef(null);
   const navigate = useNavigate();
@@ -19,6 +21,7 @@ function Home() {
   }, []);
 
   const handleVideoEnd = () => {
+    sessionStorage.setItem("introPlayed", "true");
     setTransitioning(true);
     setTimeout(() => {
       setVideoEnded(true);
