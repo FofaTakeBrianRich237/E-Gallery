@@ -55,7 +55,7 @@ arrowButton
 */
 
 
-export function Cadre({Text , ContentType ,Path, My, key , Position , arrowButton = {}})
+export function Cadre({Text , ContentType ,Path, My, key , Position , arrowButton = {}, OnClick = ()=>{}})
 {
     const contentRef = useRef(null);
     const [ArrowVisibility,setArrowVisibility] = useState(false);
@@ -90,7 +90,7 @@ export function Cadre({Text , ContentType ,Path, My, key , Position , arrowButto
                 <img 
                     ref={contentRef}
                     src={Path} 
-                    className='w-full h-full object-cover '
+                    className='w-full h-full object-cover'
                 />
             );
         }
@@ -132,16 +132,18 @@ export function Cadre({Text , ContentType ,Path, My, key , Position , arrowButto
                 }
 
 
-    // const OnClick = () => {}
-
     return (
         <div 
         className={`flex flex-col relative  bg-gray-200 rounded-3xl ${My}
             ${LeftMargin()} shadow-[0px_0px_18px_rgba(255,215,0,0.6)]
-            flex flex-col flex-1 transition-all duration-500 hover:flex-[2]`}
+            flex flex-col flex-1 transition-all duration-700 hover:flex-[2]`}
             onMouseEnter={onHover}
             onMouseLeave={onLeave}
-            onClick={arrowButton.func}
+            onClick={(e)=>
+            {
+                e.stopPropagation();
+                OnClick();
+            }}
         >
             <div className={`flex-[70%]  overflow-hidden rounded-3xl`}>
 
