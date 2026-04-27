@@ -14,10 +14,6 @@ function Home() {
   );
   const [transition, settransition] = useState(false);
   const RefVideo = useRef(null);
-function Home({connetionState}) {
-  const [videoEnded, setVideoEnded] = useState(false);
-  const [transitioning, setTransitioning] = useState(false);
-  const videoRef = useRef(null);
   const navigate = useNavigate();
 
   // lancement de la video et suivie de la lecture jusqu'a la fin
@@ -42,11 +38,6 @@ function Home({connetionState}) {
       <div
         className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${videoEnd ? "opacity-100" : "opacity-0"}`} style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}>
         <Navbar Home={true} isConnected={false} />
-        className={`absolute inset-0 w-full h-full transition-opacity duration-700
-                    ${videoEnded ? "opacity-100" : "opacity-0"}`}
-        style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}
-      >
-        <Navbar Home={true} isConnected={connetionState} />
         <div className="w-full h-full flex flex-col justify-center items-center">
             <div className="text-center mb-8 absolute top-[20%] left-[5%] w-[650px]" style={{textShadow : "#393533c4 3px 3px 5px"}}>
                 <h1 className="font-[Afrik] text-[38px] mb-4 text-justify">Welcome to KZB E-<span style={{color : "white", textShadow : "#ffffffad 3px 3px 5px"}}>Gallery</span></h1>
