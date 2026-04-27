@@ -10,6 +10,8 @@ import test from '../../../assets/test.mp4';
 import logo from '../../../assets/KZB_Galerie-removebg-preview.png';
 import background from '../../../assets/Gemini_Generated_Image_2xskv22xskv22xsk.png';
 import { useAsyncError } from 'react-router-dom';
+import Buttons from '../../Global_Component/Buttons';
+
 
 export function AccountCadres({title})
 {
@@ -215,9 +217,9 @@ export function AccountCadres({title})
         <>
             <div className={`flex-col place-items-center  h-full w-full`}>
                 <div className={`h-[20%] w-full`}>
-                    <p className={`w-full h-full font-bold underline pt-[3%] pl-[15px] text-[30px] `}>{title}</p>
+                    <p className={`font-[Afrik] w-full h-full font-bold underline pt-[3%] pl-[15px] text-[30px] `}>{title}</p>
                 </div>
-                <div className={`flex h-[80%] bg-black rounded-[25px] border-[rgba(255,215,0,0.6)] w-[98.5%]  gap-[25px]`}>
+                <div className={` mt-[10px] flex h-[80%] bg-black rounded-[25px] border-[rgba(255,215,0,0.6)] w-[98.5%]  gap-[25px]`}>
                     {Display()}
                 </div> 
             </div>     
@@ -255,7 +257,7 @@ export function Options({func1 = ()=>{} ,func2 = ()=>{}})
             bg-[rgba(255,215,0,0.6)]  border-l-2 border-r-2 border-gray-200 
              w-full h-[50%] place-items-center border-4 active:border-8`}
             >
-                <p className={`text-[32px] mt-[10px] transition-all duration-100  text-center`}>{text}</p>
+                <p className={`font-[Afrik] text-[32px] mt-[10px] transition-all duration-100  text-center`}>{text}</p>
             </div>
         );
     }
@@ -285,22 +287,24 @@ export function LowerSection()
     );
 }
 
-const ScoreBox = ({text,score}) =>
+const 
+ScoreBox = ({text,score,className,TextClassName, FirstdivCss, SeconddivCss}) =>
 {
     return(
-        <div className={`flex-1  w-full h-full`}>
-            <div className={`h-[50%] w-full border`}>
-                <p>{text}</p>
+        <div className={`${className}`}>
+            <div className={`h-[50%] w-full ${FirstdivCss}`}>
+                <p className={`font-[Afrik] text-center ${TextClassName} mt-[10%] underline text-[20px]`}>{text}</p>
             </div>
-            <div className={`h-[50%] w-full border`}>
-                <p>{score}</p>
+            <div className={` h-[50%] w-full  ${SeconddivCss}`}>
+                <p className={` font-[Afrik] text-center ${TextClassName} text-[20px]`}>{score}</p>
             </div>
         </div>
     );
 }
 
-export function Artist()
+export function Artist({setConnetionSate})
 {
+    // setConnetionSate(true);
     return(
         <>
             <div className={`h-[100vh] w-full bg-no-repeat bg-cover`} style={{ backgroundImage: `url(${background})` }}>
@@ -310,18 +314,20 @@ export function Artist()
                         className={`w-full h-full  object-cover`}
                     />
                 </div>
-                <div className='flex w-full fixed top-[80px] left-0 h-[110px] '>
-                    <div className={`flex-2 bg-[rgba(255,255,255,0.8)] border-2  border-gray-200 `}>
+                <div className={`flex  w-full fixed top-[80px] left-0 h-[110px] `}>
+                    <div className={`w-[30%] bg-[rgba(255,255,255,0.8)] border-2  border-gray-200 `}>
 
                     </div>
-                    <div className='flex'>
-                        <ScoreBox text={"teste"} score={0}/>
+                    <div className='flex 0 w-[20%] ml-[15%] bg-[rgba(255,255,255,0.8)]'>
+                        <ScoreBox text={"ARTWORKS"} score={0} className={'w-[50%]'} />
+                        <ScoreBox text={"SUBSCRIBERS"} score={0}className={'w-[50%]'} />
                     </div>
-                    <ScoreBox text={"teste"} score={0}/>
-                    <Settings className='flex-1 h-[50%] mt-[2%]'/>
+                    <ScoreBox text={"LIKES"} score={0} className={`w-[5%] ml-[15%]  rounded-[10px] bg-[rgba(0,0,0,0.8)]`} TextClassName={"text-white"}/>
+                    <Settings className='w-[5%] h-[50%] ml-[7%] mt-[1%] '/>
                 </div>
                 <LowerSection/>
             </div>
+            {/* <Buttons name={"test"} className={`w-[100px] text-center`}/> */}
         </>
     );
 }

@@ -215,7 +215,7 @@ export function AccountCadres({title})
         <>
             <div className={`flex-col place-items-center  h-full w-full`}>
                 <div className={`h-[20%] w-full`}>
-                    <p className={`w-full h-full font-bold underline pt-[3%] pl-[15px] text-[30px] `}>{title}</p>
+                    <p className={`font-[Afrik] w-full h-full font-bold underline pt-[3%] pl-[15px] text-[30px] `}>{title}</p>
                 </div>
                 <div className={`flex h-[80%] bg-black rounded-[25px] border-[rgba(255,215,0,0.6)] w-[98.5%]  gap-[25px]`}>
                     {Display()}
@@ -255,7 +255,7 @@ export function Options({func1 = ()=>{} ,func2 = ()=>{}})
             bg-[rgba(255,215,0,0.6)]  border-l-2 border-r-2 border-gray-200 
              w-full h-[50%] place-items-center border-4 active:border-8`}
             >
-                <p className={`text-[32px] mt-[10px] transition-all duration-100  text-center`}>{text}</p>
+                <p className={`font-[Afrik]font-[Afrik] text-[32px] mt-[10px] transition-all duration-100  text-center`}>{text}</p>
             </div>
         );
     }
@@ -284,8 +284,10 @@ export function LowerSection()
     );
 }
 
-export function User()
+export function User({setConnetionSate})
 {
+
+    // setConnetionSate(true);
     return(
         <>
             <div className={`h-[100vh] w-full bg-no-repeat bg-cover`} style={{ backgroundImage: `url(${background})` }}>

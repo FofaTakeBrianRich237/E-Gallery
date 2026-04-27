@@ -23,3 +23,7 @@ body {
   font-weight: 300;
   font-size: 10px;
 }
+
+.text {
+  @apply font-[Afrik];
+}

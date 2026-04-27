@@ -26,6 +26,7 @@ function Navbar({Home, isConnected}) {
                 )}
             </div>
         </nav>
+        </nav>
         </div>
     );
 }

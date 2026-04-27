@@ -7,6 +7,7 @@ import apple from '../../assets/apple.png'
 import Coffee from '../../assets/coffee.png'
 import test from '../../assets/test.mp4';
 import Navbar from '../Global_Component/Navbar';
+import SearchBar from '../Global_Component/searchBar';
 
 export function ActualityCadres ({Artist_type})
 {
@@ -213,7 +214,7 @@ export function ActualityCadres ({Artist_type})
             <div className={`place-items-center h-[420px] `}>
                 
                 <div className={`border-7 rounded-t-[25px]  border-b-0 place-items-center shadow-[0px_0px_20px_rgba(255,215,0,0.6)] border-[rgba(255,215,0,0.6)] w-[50%] h-[60px] `}>
-                    <p className={`text-wrap break-all my-[1%] border-[rgba(255,215,0,0.6)]  text-center text-[rgba(255,215,0,0.6)] text-[25px]`} >{Artist_type}</p>
+                    <p className={` font-[Afrik]  ext-wrap break-all my-[1%] border-[rgba(255,215,0,0.6)]  text-center text-[rgba(255,215,0,0.6)] text-[25px]`} >{Artist_type}</p>
                 </div>
 
                 <div className={`flex border-7  shadow-[0px_0px_20px_rgba(255,215,0,0.6)] rounded-[25px] border-[rgba(255,215,0,0.6)] w-[98.5%] h-[330px] gap-[25px]`}>
@@ -221,7 +222,7 @@ export function ActualityCadres ({Artist_type})
                 </div>
 
                 {/* <div className={`border-7  bg-black rounded-t-[25px]  border-b-0 place-items-center shadow-[0px_0px_20px_rgba(255,215,0,0.6)] border-[rgba(255,215,0,0.6)] w-[50%] h-[60px] `}>
-                    <p className={`text-wrap break-all my-[2%] border-black  text-center text-[rgba(255,215,0,0.6)] text-[25px]`} >{Artist_type}</p>
+                    <p className={` font-[Afik]  font-[Afik] font-[Afik]text-wrap break-all my-[2%] border-black  text-center text-[rgba(255,215,0,0.6)] text-[25px]`} >{Artist_type}</p>
                 </div>
 
                 <div className={`flex border-7 bg-black  rounded-[25px] border-[rgba(255,215,0,0.6)]  w-[98.5%] h-[330px] gap-[25px]`}>
@@ -233,13 +234,13 @@ export function ActualityCadres ({Artist_type})
 
 }
 
-export function Actualities()
+export function Actualities({connetionState})
 {
     const DivRef = useRef(null);
-    const ArtsTypes = [";iopoiesgoiseloiglsoeiloidoilo",
-        ";iopoiesgoiseloiglsoeiloidoilo",
-        ";iopoiesgoiseloiglsoeiloidoilo",
-        ";iopoiesgoiseloiglsoeiloidoilo",";iopoiesgoiseloiglsoeiloidoilo",";iopoiesgoiseloiglsoeiloidoilo"];
+    const ArtsTypes = ["iopoiesgoiseloiglsoeiloidoilo",
+        "iopoiesgoiseloiglsoeiloidoilo",
+        "iopoiesgoiseloiglsoeiloidoilo",
+        "iopoiesgoiseloiglsoeiloidoilo","iopoiesgoiseloiglsoeiloidoilo","iopoiesgoiseloiglsoeiloidoilo"];
 
     const Actu = () =>
     {
@@ -264,7 +265,7 @@ export function Actualities()
                 <div 
                     className={`flex flex-col relative  bg-gray-200 rounded-3xl 
                     shadow-[0px_0px_18px_rgba(255,215,0,0.6)]
-                    flex flex-col flex-1 transition-all duration-700 h-[300px] mb-10 hover:flex-[2]`}
+                    flex flex-col flex-1 transition-all duration-700 h-[300px] mb-10 hover:flex-[2] `}
                     onClick={OnClick}
                 >
                     <div className={`flex-[70%]  overflow-hidden rounded-3xl`}>
@@ -276,7 +277,7 @@ export function Actualities()
 
                     <div className={` place-items-center bg-gray-200 rounded-2xl flex-[30%] min-w-0`}>
                         <p 
-                            className='text-wrap break-all  w-[600px] h-full text-center pt-[20px]'>""</p>                    
+                            className={`font-[Afrik] text-wrap break-all w-[600px] h-full text-center pt-[20px]`}>GET TO HOME</p>                    
                     </div>
 
                 </div>
@@ -285,16 +286,17 @@ export function Actualities()
     }
 
     useEffect(()=>{
-        DivRef.current.classList.add('mt-[70px]');
+        DivRef.current.classList.add('mt-[100px]');
     },[]);
 
     const OnClick = ()=>{}
 
     return (
         <>
-            <div  className='bg-black'>
-                <Navbar/>
-                <div ref={DivRef} className={`mt-[40%] transition-all duration-1000`}/>
+            <div className='w-full min-h-screen bg-black flex-col '>
+                <Navbar isConnected={connetionState}/>
+                <SearchBar />
+                <div ref={DivRef} className={`mt-[40%] pt-[50px] transition-all duration-1000`}/>
                 {BigCadre()}
                 {Actu()}
             </div>

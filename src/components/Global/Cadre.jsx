@@ -151,10 +151,10 @@ export function Cadre({Text , ContentType ,Path, My, key , Position , arrowButto
 
             </div>
 
-            <div className={` bg-gray-200 rounded-2xl flex-[30%] min-w-0`}>
+            <div className={`  bg-gray-200 rounded-2xl flex-[30%] min-w-0`}>
 
                 <p 
-                    className='text-wrap break-all text-center my-[5%] mt-[10px]'>
+                    className={`font-[Afrik]  text-wrap break-all text-center text-[13px] my-[5%] mt-[10px]`}>
                 {Text}</p>
                 
             </div>

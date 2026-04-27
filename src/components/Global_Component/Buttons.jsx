@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Buttons({ name, icon: Icon, className = "", func }) {
+function Buttons({ name, icon: Icon, className = "", func = ()=>{}}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
