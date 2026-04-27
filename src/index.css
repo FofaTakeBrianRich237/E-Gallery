@@ -16,7 +16,6 @@ body {
   font-family: "Avigea";
   src: url("./assets/Font/Avigea-Regular.ttf") format("truetype");
 }
-@import "tailwindcss";
 
 .searchBar::placeholder {
   font-family: Afrik;

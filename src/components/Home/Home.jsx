@@ -1,48 +1,47 @@
 import Navbar from '../Global_Component/Navbar.jsx';
 import Buttons from '../Global_Component/Buttons.jsx';
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import introVideo from "../../assets/intro.mp4" ;
 import background from "../../assets/HOME.jpg" ;
 import { ArrowDownRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+function Home() {
+
+  // Variable pour verifier l'etat de la video et lancer la transition, recuperer sa valeur Dom 
+  const [videoEnd, setvideoEnd] = useState(
+    () => sessionStorage.getItem("introplayed") === "true"
+  );
+  const [transition, settransition] = useState(false);
+  const RefVideo = useRef(null);
 function Home({connetionState}) {
   const [videoEnded, setVideoEnded] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
   const videoRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch((e) => console.log("Autoplay bloqué :", e));
-    }
-  }, []);
-
-  const handleVideoEnd = () => {
-    setTransitioning(true);
+  // lancement de la video et suivie de la lecture jusqu'a la fin
+  const EndVideoDetection = () => {
+    sessionStorage.setItem("introplayed", "true");
+    settransition(true);
     setTimeout(() => {
-      setVideoEnded(true);
-      setTransitioning(false);
+      setvideoEnd(true);
+      settransition(false);
     }, 800);
   };
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-
-      {!videoEnded && (
+      {!videoEnd && (
         <video
-          ref={videoRef}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700
-                      ${transitioning ? "opacity-0" : "opacity-100"}`}
-          src={introVideo}
-          autoPlay
-          muted
-          playsInline
-          onEnded={handleVideoEnd}
-        />
+          ref={RefVideo}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${transition ? "opacity-0" : "opacity-100"}`}
+          src={introVideo} autoPlay muted onEnded={EndVideoDetection} />
       )}
 
       <div
+        className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${videoEnd ? "opacity-100" : "opacity-0"}`} style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}>
+        <Navbar Home={true} isConnected={false} />
         className={`absolute inset-0 w-full h-full transition-opacity duration-700
                     ${videoEnded ? "opacity-100" : "opacity-0"}`}
         style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}
