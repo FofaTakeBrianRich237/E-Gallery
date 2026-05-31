@@ -2,14 +2,11 @@ import Home from './components/Home/Home.jsx';
 import Gallery from './components/Gallery/Gallery.jsx';
 import { Routes, Route } from 'react-router-dom';
 import { useState,useEffect } from 'react'
-import {  Cadre } from './components/Global/Cadre';
-import { Actualities, ActualityCadres } from './components/Actualities/Actualities';
+import { Actualities } from './components/Actualities/Actualities.jsx';
 
-
-import { AccountCadres, LowerSection, Options, SectionCadres, User } from './components/Acounts/User/User.jsx';
 import { Artist } from './components/Acounts/Artist/Artist.jsx';
 import { AcountForm } from './components/Acounts/acount/acount.jsx';
-
+import { User } from './components/Acounts/User/User.jsx';
 
 function App() {
 
