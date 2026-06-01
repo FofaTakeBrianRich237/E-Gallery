@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import Oeuvres, Users, Artiste, Commentaire_artwork, Commentaire_post
+from .models import Oeuvres, Users, Artiste, Commentaire_artwork, Commentaire_post, Post
 # Create your views here.
 
 @api_view(['GET'])
@@ -127,3 +127,49 @@ def get_comments_post(request, id_artwork):
         })
 
     return Response(data)
+
+@api_view(['GET'])
+def get_post(request):
+    posts = Post.objects()
+
+    data = []
+    post = {}
+
+    for p in posts:
+        post = {
+            "id" : p._id,
+            "content" : p.content,
+        }
+        a = Artiste.objects.get(id = p.id_artist)
+        u =  Artiste.objects.get(id = a.id_user)
+        post.update({
+            "id_artist" : a.id_artist,
+            "id_user" : u._id,
+            "profil" : u.profilUrl,
+            "nom" : u.nom,
+            "prenom" : u.prenom 
+        })
+
+        data.append(post)
+        post.clear()
+
+    return Response(data)
+
+@api_view(['POST'])
+def add_user(request):
+    user = Users(
+        nom = request.data.get("nom")
+        prenom = request.data.get("prenom")
+        password = request.data.get("password")
+        email = request.data.get("email")
+        telephone = request.data.get("tel")
+        categorie = request.data.get("categorie")
+        profilUrl = request.data.get("profil")
+    )
+
+    user.save()
+
+    return Response({
+        "message" : "user create success",
+        "_id" : str(user.id)
+    })

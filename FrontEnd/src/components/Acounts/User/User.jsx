@@ -68,7 +68,7 @@ export function User({setConnetionSate})
 
         return(
             <>
-                <div className={`flex w-full border mb-[3px]  border-[#f3f0e9] pt-[6px] pb-[8px] pl-[12px] pr-[15px] rounded-[7px] hover:cursor-pointer hover:bg-[rgba(43,104,248,0.1)] cursor-pointer  active:w-[98%] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`} 
+                <div className={`flex w-full border mb-[3px]  border-[#F5EDD6] pt-[6px] pb-[8px] pl-[12px] pr-[15px] rounded-[7px] hover:cursor-pointer hover:bg-[rgba(43,104,248,0.1)] cursor-pointer  active:w-[98%] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`} 
                     onClick={Onclick} >
                     <p className={` text-white ml-[5px] text-[18px] font-bold`}>{Page}</p>
                 </div>
@@ -160,7 +160,7 @@ export function User({setConnetionSate})
                         <video 
                             ref={contentRef}
                             src={Components.Path} 
-                            className='w-full h-full object-cover '
+                            className='w-full h-full object-cover rounded-t-[8px]'
                             muted
                             loop
                         />
@@ -172,7 +172,7 @@ export function User({setConnetionSate})
                         <img 
                             ref={contentRef}
                             src={Components.Path} 
-                            className='w-full h-full object-cover'
+                            className='w-full h-full object-cover rounded-t-[8px]'
                         />
                     );
                 }
@@ -222,16 +222,21 @@ export function User({setConnetionSate})
 
     const Discover = () =>
     {
+        const Onclick = () =>
+        {
+            navigate('/gallery');
+        }
+
         return (
             <>
                 <div className = {` w-[96%] h-[220px] `}>
                     <div className = {`flex  mt-[30px] hover:cursor-pointer `}>
-                        <p className = {`text-[#ddb546] pr-[1%]  border-b-3 border-[#8B6914] text-[22px] pb-[8px] `}>MES</p>
-                        <p className = {`text-[#F5EDD6] border-b-3 pb-[8px] pr-[1%] border-[#8B6914] text-[22px]`}>FAVORIS</p>
+                        <p className = {`text-[#ddb546] pr-[6px]  border-b-3 border-[#8B6914] text-[22px] pb-[8px] `}>DÉCOUVRIR</p>
+                        <p className = {`text-[#F5EDD6] border-b-3 pb-[8px] pr-[1%] border-[#8B6914] text-[22px]`}>DES ARTISTES</p>
                     </div>
                     <div className = {`rounded-[3px]   justify-items-center bg-[#272218] w-full border border-[rgba(201,168,76,0.12)] h-[71%] mt-[2%]`}>
                         <p className={` text-[#9B8E75] text-[27px] mb-[10px] mt-[3%]`}>EXPLOREZ LA GALERIE POUR DÉCOUVRIR DE NOUVEAUX TALENTS</p>                        
-                        <p className={` bg-[#8B6914] text-[20px] p-[5px] pl-[40px] pr-[40px] rounded-[10px] font-bold active:p-[4px] active:pl-[38px] active:pr-[38px] cursor-pointer`}>ACCÉDER À LA GALERIE</p>
+                        <p className={` bg-[#8B6914] text-[20px] p-[5px] pl-[40px] pr-[40px] rounded-[10px] font-bold active:p-[4px] active:pl-[38px] active:pr-[38px] cursor-pointer`} onClick={Onclick} >ACCÉDER À LA GALERIE</p>
                     </div>
                 </div>
             </>
@@ -256,37 +261,37 @@ export function User({setConnetionSate})
     return(
         <>
 
-            <div className = {` fixed w-full h-[250px] bg-cover flex`} style={{ backgroundImage: `url(${bg_user})` }} >
-                <div className = {` h-full w-[10%]  `} >
-                    <div className = {`bg-[#2d2a25] w-[60%] h-[37%] mt-[75%] rounded-full border-2 border-[#c2a659] ml-[20%]`}>
+            <div className = {` fixed w-full h-[220px] bg-cover flex border-[#a77c0e] border-b-3`} style={{ backgroundImage: `url(${bg_user}) ` }} >
+                <div className = {` h-full w-[10%] `} >
+                    <div className = {`bg-[#2d2a25] w-[55%] h-[37%] mt-[60%] rounded-full border-2 border-[#c2a659] ml-[20%]`}>
                         {DisplayProfileImage()}
                     </div>
                 </div>
                 <div className = {` h-full w-[60%]  `} >
-                    <div className = {` mt-[10%] `}>
+                    <div className = {` mt-[7%] `}>
                         <p className={` text-[#F5EDD6] text-[32px]  `} > {user.UserName} </p>
-                        <p className={` text-[#b69742] text-[20px] `} > ARTISTE </p>
+                        <p className={` text-[#b69742] text-[20px] `} > VISITOR </p>
                     </div>
                     <div className = {`flex gap-3 mt-[2%]`} >
                         <div className = {` flex border-[#C9A84C] border  bg-[rgba(225,173,30,0.1)] rounded-[3px] pr-[18px] pl-[17px] p-[2px] h-fit mt-[8px] `} >
                             <p className={` text-[#b69742]  text-[12px] mr-[10px]`} > ◈ </p>
                             <p className={` text-[#b69742]  text-[12px]   `} > {user.Verification} </p>
                         </div>
-                        <p className={` text-white border border-white rounded-[5px] text-[17px]  pr-[15px] pl-[15px] pt-[5px] pb-[5px]  bg-[#252424] hover:bg-[rgba(43,104,248,0.1)] cursor-pointer active:pb-[4px] active:pt-[4px] active:pl-[13px] active:pr-[13px] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`} > DÉCONNEXION </p>
+                        <p className={` text-white border border-[#F5EDD6] rounded-[5px] text-[17px]  pr-[15px] pl-[15px] pt-[5px] pb-[5px]  bg-[#252424] hover:bg-[rgba(43,104,248,0.1)] cursor-pointer active:pb-[4px] active:pt-[4px] active:pl-[13px] active:pr-[13px] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`} > DÉCONNEXION </p>
                     </div>
                 </div>
-                <div className = {` pl-[15%] h-full w-[30%] flex gap-4 pt-[10%]`} >
+                <div className = {` pl-[15%] h-full w-[30%] flex gap-4 pt-[8%]`} >
                     <Stats value={47} text={"OEUVRES"} />
                     <Stats value={312} text={"ABONNÉS"} />
                 </div>
             </div>
 
             <div className = {` w-full  h-[100vh] flex`} >
-                <div className= {` justify-items-center   bg-[#12100D] border-r border-[rgba(201,168,76,0.12)] w-[13%] h-[calc(100vh-250px)] no-scrollbar overflow-y-scroll mt-[250px] pt-[2%]`} >
+                <div className= {` justify-items-center   bg-[#12100D] border-r border-[rgba(201,168,76,0.12)] w-[13%] h-[calc(100vh-220px)] no-scrollbar overflow-y-scroll mt-[220px] pt-[2%]`} >
                     <Buttons Page={"ACTUALITY"} Navto={'/actuality'}/>
                     <Buttons Page={"GALERIE"} Navto={'/gallery'}/>
                 </div>
-                <div className= {`justify-items-center border bg-[#0A0806] w-[87%] h-[calc(100vh-250px)] no-scrollbar overflow-y-scroll mt-[250px] `} >
+                <div className= {`justify-items-center border bg-[#0A0806] w-[87%] h-[calc(100vh-220px)] no-scrollbar overflow-y-scroll mt-[220px] `} >
                     <SubSectionFavoris Favoris={Favoris} />
                     <SubSectionArtistSuivis ArtistSuivis={ArtistSuivis}/>      
                     <Discover /> 

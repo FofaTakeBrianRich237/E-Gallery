@@ -3,7 +3,7 @@ import Navbar from '../Global_Component/Navbar.jsx';
 import SearchBar from '../Global_Component/searchBar.jsx';
 import Artwork from '../Global_Component/CadreArtwork.jsx';
 
-// ─── Config des rangs de profondeur ──────────────────────────────────────────
+// ─── Configuration des rangs de profondeur ──────────────────────────────────────────
 const RANG_CONFIGS = [
   { z: 0,    scale: 1,    opacity: 1,   zIndex: 10 },
   { z: -280, scale: 0.78, opacity: 0.9, zIndex: 8  },
@@ -180,7 +180,7 @@ function Gallery() {
         <Couloir
           artworks={gauche}
           offset={offset}
-          rotY={50}
+          rotY={40}
           rotX={10}
         />
 
@@ -188,7 +188,7 @@ function Gallery() {
         <Couloir
           artworks={droite}
           offset={offset}
-          rotY={-60}
+          rotY={-40}
           rotX={10}
         />
 

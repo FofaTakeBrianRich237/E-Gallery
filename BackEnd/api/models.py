@@ -11,6 +11,7 @@ class Users(Document) :
     dateInscription = DateField()
     telephone = StringField()
     categorie = StringField()
+    profilUrl = StringField()
 
 class Oeuvres(Document): 
     _id = ObjectIdField()
