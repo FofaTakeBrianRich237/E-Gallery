@@ -71,7 +71,7 @@ export function Artist({setConnetionSate})
 
         return(
             <>
-                <div className={`flex w-full border mb-[3px]  border-[#f3f0e9] pt-[6px] pb-[8px] pl-[12px] pr-[15px] rounded-[7px] hover:cursor-pointer hover:bg-[rgba(43,104,248,0.1)] cursor-pointer  active:w-[98%] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`}
+                <div className={`flex w-full border mb-[3px]  border-[#F5EDD6] pt-[6px] pb-[8px] pl-[12px] pr-[15px] rounded-[7px] hover:cursor-pointer hover:bg-[rgba(43,104,248,0.1)] cursor-pointer  active:w-[98%] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`}
                 onClick={Onclick} >
                     <p className={` text-white ml-[5px] text-[18px] font-bold`}>{Page}</p>
                 </div>
@@ -163,7 +163,7 @@ export function Artist({setConnetionSate})
                         <video 
                             ref={contentRef}
                             src={Components.Path} 
-                            className='w-full h-full object-cover '
+                            className='w-full h-full object-cover rounded-t-[8px]'
                             muted
                             loop
                         />
@@ -175,7 +175,7 @@ export function Artist({setConnetionSate})
                         <img 
                             ref={contentRef}
                             src={Components.Path} 
-                            className='w-full h-full object-cover'
+                            className='w-full h-full object-cover rounded-t-[8px]'
                         />
                     );
                 }
@@ -262,7 +262,7 @@ export function Artist({setConnetionSate})
                         <video 
                             ref={contentRef}
                             src={Components.Path} 
-                            className='w-full h-full object-cover '
+                            className='w-full h-full object-cover rounded-t-[8px]'
                             muted
                             loop
                         />
@@ -274,7 +274,7 @@ export function Artist({setConnetionSate})
                         <img 
                             ref={contentRef}
                             src={Components.Path} 
-                            className='w-full h-full object-cover'
+                            className='w-full h-full object-cover rounded-t-[8px]'
                         />
                     );
                 }
@@ -339,14 +339,14 @@ export function Artist({setConnetionSate})
     return(
         <>
 
-            <div className = {` fixed w-full h-[250px] bg-cover flex`} style={{ backgroundImage: `url(${bg_user})` }} >
+            <div className = {` fixed w-full h-[220px] bg-cover flex border-[#a77c0e] border-b-3 `} style={{ backgroundImage: `url(${bg_user})` }} >
                 <div className = {` h-full w-[10%]  `} >
-                    <div className = {`bg-[#2d2a25] w-[60%] h-[37%] mt-[75%] rounded-full border-2 border-[#c2a659] ml-[20%]`}>
+                    <div className = {`bg-[#2d2a25] w-[60%] h-[37%] mt-[60%] rounded-full border-2 border-[#c2a659] ml-[20%]`}>
                         {DisplayProfileImage()}
                     </div>
                 </div>
                 <div className = {` h-full w-[60%]  `} >
-                    <div className = {` mt-[10%] `}>
+                    <div className = {` mt-[7%] `}>
                         <p className={` text-[#F5EDD6] text-[32px]  `} > {user.UserName} </p>
                         <p className={` text-[#b69742] text-[20px] `} > ARTISTE </p>
                     </div>
@@ -355,10 +355,10 @@ export function Artist({setConnetionSate})
                             <p className={` text-[#b69742]  text-[12px] mr-[10px]`} > ◈ </p>
                             <p className={` text-[#b69742]  text-[12px]   `} > {user.Verification} </p>
                         </div>
-                        <p className={` text-white border border-white rounded-[5px] text-[17px]  pr-[15px] pl-[15px] pt-[5px] pb-[5px]  bg-[#252424] hover:bg-[rgba(43,104,248,0.1)] cursor-pointer active:pb-[4px] active:pt-[4px] active:pl-[13px] active:pr-[13px] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`} > DÉCONNEXION </p>
+                        <p className={` text-white border border-[#F5EDD6] rounded-[5px] text-[17px]  pr-[15px] pl-[15px] pt-[5px] pb-[5px]  bg-[#252424] hover:bg-[rgba(43,104,248,0.1)] cursor-pointer active:pb-[4px] active:pt-[4px] active:pl-[13px] active:pr-[13px] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`} > DÉCONNEXION </p>
                     </div>
                 </div>
-                <div className = {` pl-[5%] h-full w-[30%] flex gap-4 pt-[10%]`} >
+                <div className = {` pl-[5%] h-full w-[30%] flex gap-4 pt-[8%]`} >
                     <Stats value={47} text={"OEUVRES"} />
                     <Stats value={312} text={"ABONNÉS"} />
 
@@ -370,17 +370,17 @@ export function Artist({setConnetionSate})
             </div>
 
             <div className = {` w-full  h-[100vh] flex`} >
-                <div className= {` justify-items-center   bg-[#12100D] border-r border-[rgba(201,168,76,0.12)] w-[13%] h-[calc(100vh-250px)] no-scrollbar overflow-y-scroll mt-[250px] pt-[2%]`} >
+                <div className= {` justify-items-center   bg-[#12100D] border-r border-[rgba(201,168,76,0.12)] w-[13%] h-[calc(100vh-220px)] no-scrollbar overflow-y-scroll mt-[220px] pt-[2%]`} >
                     <Buttons Page={"ACTUALITY"} Navto={'/actuality'} Nav={true}/>
                     <Buttons Page={"GALERIE"} Navto={'/gallery'} Nav={true}/>
                     <Buttons Page={"STATISTIQUE"} Nav={false}/>
                     <Buttons Page={"PARAMÈTRES"} Nav={false}/>
-                    <div className={`flex-col mt-[15%] w-[88%] border mb-[3px]  border-[#f3f0e9] pt-[10px] pb-[12px] pl-[12px] pr-[15px] rounded-[7px] hover:cursor-pointer hover:bg-[rgba(43,104,248,0.1)]   active:pt-[8px] active:pb-[10px] active:w-[85%] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`}>
+                    <div className={`flex-col mt-[15%] w-[88%] border mb-[3px]  border-[#F5EDD6] pt-[10px] pb-[12px] pl-[12px] pr-[15px] rounded-[7px] hover:cursor-pointer hover:bg-[rgba(43,104,248,0.1)]   active:pt-[8px] active:pb-[10px] active:w-[85%] active:bg-[rgba(255,255,255,0.1)] transition-all duration-100`}>
                         <p className={` text-white ml-[5px] text-[18px] text-center font-bold`}>UPDATE</p>
                         <p className={` text-white ml-[5px] text-[18px] text-center font-bold`}>ACTUALITY</p>
                     </div>
                 </div>
-                <div className= {`justify-items-center border bg-[#0A0806] w-[87%] h-[calc(100vh-250px)] no-scrollbar overflow-y-scroll mt-[250px] `} >
+                <div className= {`justify-items-center border bg-[#0A0806] w-[87%] h-[calc(100vh-220px)] no-scrollbar overflow-y-scroll mt-[220px] `} >
                     <SubSectionMyWorks Works={Works}/>
                     <SubSectionFavoris Favoris={Favoris} />
                     <SubSectionArtistSuivis ArtistSuivis={ArtistSuivis}/>                    
