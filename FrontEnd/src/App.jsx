@@ -22,8 +22,8 @@ function App() {
   return (
     <>
     <Routes>
-      {/* <Route path="/" eement={<Home connetionState={ConnetionState}/>} /> */}
-      <Route path="/" element={<Admin connetionState={ConnetionState}/>} />
+      <Route path="/" element={<Home connetionState={ConnetionState}/>} />
+      <Route path="/admin" element={<Admin connetionState={ConnetionState}/>} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/actuality" element={<Actualities connetionState={ConnetionState}/>}/>
       {/* <Route path="/account" element={<Acount/>}/> */}

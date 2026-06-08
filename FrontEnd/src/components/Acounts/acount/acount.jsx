@@ -103,7 +103,7 @@ export function AcountForm()
                         //  ref={current => AcountRefs.current.Artist = current}
                         onClick={()=>{setAcountChois("Artist")}}
                         >
-                            <p className={` font-[Afrik] text-center text-[12px] text-white`}>ARTIST</p>
+                            <p className={` font-[Afrik] text-center p-0.5 text-[12px] text-white`}>ARTIST</p>
                         </div>
 
                         <div className=
@@ -114,7 +114,7 @@ export function AcountForm()
                         //  ref={current => AcountRefs.current.Visitor = current}
                         onClick={()=>{setAcountChois("Visitor")}}
                         >
-                            <p className={`font-[Afrik] text-center text-[12px] text-white`}>VISITEUR</p>
+                            <p className={`font-[Afrik] text-center p-0.5 text-[12px] text-white`}>VISITEUR</p>
                         </div>
                     </div>
 
